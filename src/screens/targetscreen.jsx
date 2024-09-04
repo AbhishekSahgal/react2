@@ -10,43 +10,40 @@ const TARGET = () => {
 
   return (
     <View style={styles.container}>
-      {/* <Image source={require('./src/assests/logo.png')} style={styles.logo} /> */}
+      <Image source={require('../assests/logo.png')} style={styles.logo} />
       <Text style={styles.greeting}>Hello, Abhay!</Text>
       <Text style={styles.description}>
         Maximize your learning with a platform that goes beyond the ordinary. Access over 1000+ exam syllabus and track your progress in real time. Identify your strengths and weaknesses to focus on high-scoring topics and achieve your goals efficiently.
       </Text>
       <View style={styles.targetsContainer}>
-        <TouchableOpacity onPress={() => handleTargetClick('NEET')} style={styles.targetButton}>
+        <TouchableOpacity onPress={() => handleTargetClick('NEET')} style={styles.targetButton1}>
           <Text style={styles.targetButtonText}>NEET</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleTargetClick('IITJEE')} style={styles.targetButton}>
+        <TouchableOpacity onPress={() => handleTargetClick('IITJEE')} style={styles.targetButton2}>
           <Text style={styles.targetButtonText}>IITJEE</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleTargetClick('ESE')} style={styles.targetButton}>
+        <TouchableOpacity onPress={() => handleTargetClick('ESE')} style={styles.targetButton3}>
           <Text style={styles.targetButtonText}>ESE</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleTargetClick('NURSING EXAMS')} style={styles.targetButton}>
+        <TouchableOpacity onPress={() => handleTargetClick('NURSING EXAMS')} style={styles.targetButton4}>
           <Text style={styles.targetButtonText}>NURSING EXAMS</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleTargetClick('BANKING')} style={styles.targetButton}>
+        <TouchableOpacity onPress={() => handleTargetClick('BANKING')} style={styles.targetButton5}>
           <Text style={styles.targetButtonText}>BANKING</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleTargetClick('RAILWAY')} style={styles.targetButton}>
+        <TouchableOpacity onPress={() => handleTargetClick('RAILWAY')} style={styles.targetButton6}>
           <Text style={styles.targetButtonText}>RAILWAY</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleTargetClick('TEACHING')} style={styles.targetButton}>
+        <TouchableOpacity onPress={() => handleTargetClick('TEACHING')} style={styles.targetButton7}>
           <Text style={styles.targetButtonText}>TEACHING</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleTargetClick('GATE')} style={styles.targetButton}>
+        <TouchableOpacity onPress={() => handleTargetClick('GATE')} style={styles.targetButton8}>
           <Text style={styles.targetButtonText}>GATE</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleTargetClick('AE/JE')} style={styles.targetButton}>
-          <Text style={styles.targetButtonText}>AE/JE</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleTargetClick('UPSE')} style={styles.targetButton}>
+        <TouchableOpacity onPress={() => handleTargetClick('UPSE')} style={styles.targetButton9}>
           <Text style={styles.targetButtonText}>UPSE</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => handleTargetClick('SSC')} style={styles.targetButton}>
+        <TouchableOpacity onPress={() => handleTargetClick('SSC')} style={styles.targetButton10}>
           <Text style={styles.targetButtonText}>SSC</Text>
         </TouchableOpacity>
       </View>
@@ -62,62 +59,185 @@ const TARGET = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#f5f5f5',
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    backgroundColor: '#ffffff',
   },
   logo: {
     width: 200,
-    height: 200,
-    marginBottom: 20,
+    height: 32,
+    marginBottom: 16,
+    marginTop: 60,
+    marginLeft: 16,
   },
   greeting: {
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: 'bold',
     marginBottom: 10,
+    marginLeft: 16,
+
   },
   description: {
-    textAlign: 'center',
-    marginBottom: 20,
+    textAlign: 'left',
+    marginBottom: 46,
+    marginLeft: 16,
+    marginRight:16,
+    fontSize:16,
+
   },
   targetsContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
+
   },
-  targetButton: {
+  targetButton1: {
     backgroundColor: '#fff',
-    borderRadius: 10,
+    borderRadius: 28,
     padding: 10,
     margin: 5,
     borderWidth: 1,
     borderColor: '#ddd',
+    width: 100,
+    marginLeft: 16,
+
   },
+  targetButton2: {
+    backgroundColor: '#fff',
+    borderRadius: 28,
+    padding: 10,
+    margin: 5,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    width: 100,
+  },
+  targetButton3: {
+    backgroundColor: '#fff',
+    borderRadius: 28,
+    padding: 10,
+    margin: 5,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    width: 100,
+    marginRight:16,
+
+  },
+  targetButton4: {
+    backgroundColor: '#fff',
+    borderRadius: 28,
+    padding: 10,
+    margin: 5,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    width: 200,
+    marginLeft: 16,
+
+  },
+  targetButton5: {
+    backgroundColor: '#fff',
+    borderRadius: 28,
+    padding: 10,
+    margin: 5,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    width: 110,
+    marginRight:16,
+
+  },
+  targetButton6: {
+    backgroundColor: '#fff',
+    borderRadius: 28,
+    padding: 10,
+    margin: 5,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    width: 110,
+    marginLeft: 16,
+
+  },
+  targetButton7: {
+    backgroundColor: '#fff',
+    borderRadius: 28,
+    padding: 10,
+    margin: 5,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    width: 200,
+    marginRight:16,
+
+  },
+  targetButton8: {
+    backgroundColor: '#fff',
+    borderRadius: 28,
+    padding: 10,
+    margin: 5,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    width: 110,
+    marginLeft: 16,
+
+  },
+  targetButton9: {
+    backgroundColor: '#fff',
+    borderRadius: 28,
+    padding: 10,
+    margin: 5,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    width: 100,
+  },
+  targetButton10: {
+    backgroundColor: '#fff',
+    borderRadius: 28,
+    padding: 10,
+    margin: 5,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    width: 90,
+    marginRight:16,
+
+  },
+
   targetButtonText: {
     fontSize: 16,
     fontWeight: 'bold',
+    textAlign:'center',
   },
   targetText: {
-    marginTop: 20,
-    marginBottom: 10,
+    marginTop: 10,
+    // marginBottom: 10,
+    textAlign:'center',
+    fontSize: 12,
+    color: '#888',
+    fontWeight:"light",
+    
+
   },
   getStartedButton: {
-    backgroundColor: '#007aff',
+    backgroundColor: '#021526',
     padding: 15,
-    borderRadius: 10,
-    width: '80%',
+    borderRadius: 28,
+    // width: '80%',
     alignItems: 'center',
+    marginTop: 36,
     justifyContent: 'center',
+    marginRight:58,
+    marginLeft: 58,
+
+
   },
   getStartedButtonText: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
+    
   },
   loadingText: {
-    marginTop: 20,
-    fontSize: 16,
+    marginTop: 110,
+    fontSize: 12,
     color: '#888',
+    textAlign:'center',
+
   },
 });
 
