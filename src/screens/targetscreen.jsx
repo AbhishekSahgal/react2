@@ -11,7 +11,7 @@ const TARGET = () => {
   return (
     <View style={styles.container}>
       <Image source={require('../assests/logo.png')} style={styles.logo} />
-      <Text style={styles.greeting}>Hello, Abhay!</Text>
+      <Text style={styles.greeting}><Text style={{color:'red',fontWeight:"400"}}>Hello,</Text> Abhay!</Text>
       <Text style={styles.description}>
         Maximize your learning with a platform that goes beyond the ordinary. Access over 1000+ exam syllabus and track your progress in real time. Identify your strengths and weaknesses to focus on high-scoring topics and achieve your goals efficiently.
       </Text>
@@ -49,7 +49,9 @@ const TARGET = () => {
       </View>
       <Text style={styles.targetText}>Click on your target</Text>
       <TouchableOpacity style={styles.getStartedButton}>
-        <Text style={styles.getStartedButtonText}>Get started</Text>
+        <Text style={styles.getStartedButtonText}
+        
+        >Get started</Text>
       </TouchableOpacity>
       <Text style={styles.loadingText}>loading everything you need...</Text>
     </View>

@@ -3,5 +3,11 @@
     "name": "target",
     "slug": "target",
     "version": "1.0.0"
-  }
+  },
+
+//   "splash": {
+//   "image": "src/assests/splash.png",
+//   "resizeMode": "cover",
+//   "backgroundColor": "white"
+// }
 }
