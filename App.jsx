@@ -7,6 +7,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import HomeScreen from './src/screen/HomeScreen';
 import targetscreen from './src/screens/targetscreen';
 import SignupScreen from './src/screens/SignupScreen';
+import InputScreen from './src/screens/InputScreen';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -15,8 +17,9 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='SignupScreen' screenOptions={{headerShown:false,}}>
+      <Stack.Screen name="SignupScreen" component={SignupScreen} />
+        <Stack.Screen name="InputScreen" component={InputScreen} />
         <Stack.Screen name="targetscreen" component={targetscreen} />
-        <Stack.Screen name="SignupScreen" component={SignupScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>
