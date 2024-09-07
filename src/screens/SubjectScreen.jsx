@@ -1,11 +1,29 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image, } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet, Image, } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faHome, faCalendar, faClock, faBars, faBell, faThLarge, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { Checkbox } from 'react-native-paper';
 
 const SyllabusPage = () => {
+    //for checkbox
     const [isChecked, setIsChecked] = useState(false);
+    //for Ongoing button
+    const [isPressed, setIsPressed] = useState(false);
+    //for gif wla button & Ongoing button
+    const handlePress = () => {
+        setIsPressed(!isPressed); // Toggle the pressed state
+    };
+
+    //for gif wla button
+    const [isHovered, setIsHovered] = useState(false);
+    const handleHoverIn = () => {
+        setIsHovered(true);
+    };
+
+    const handleHoverOut = () => {
+        setIsHovered(false);
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -16,13 +34,30 @@ const SyllabusPage = () => {
             <Text style={styles.title}>Syllabus</Text>
             <View style={styles.courseContainer}>
                 <View style={styles.courseItem}>
+                    {/* for Ongoing wla button */}
+                    <View style={styles.container3}>
+                        <TouchableOpacity
+                            onPress={handlePress}
+                            style={[
+                                styles.button,
+                                isPressed ? styles.buttonPressed : styles.buttonNotPressed,
+                            ]}
+                        >
+                            <Text style={[styles.buttonText, isPressed && styles.buttonTextPressed]}>
+                                Ongoing
+                            </Text>
+                        </TouchableOpacity>
+                    </View>
+
                     <Text style={styles.courseTitle}>Theory of Computation</Text>
+                    <View style={styles.courseInfoall}>
                     <View style={styles.courseInfoContainer}>
                         <Text style={styles.courseInfo1}>17+ Hours Syllabus</Text>
                         <Text style={styles.courseInfo2}>Scoring</Text>
                     </View>
                     <Text style={styles.courseInfo3}>8-10 marks questions possible</Text>
                     {/* <FontAwesomeIcon icon={faCheckCircle} size={15} color="green" style={styles.circle} /> */}
+                    </View>
                     <View style={styles.container2}>
                         <Checkbox
                             status={isChecked ? 'checked' : 'unchecked'}
@@ -31,7 +66,13 @@ const SyllabusPage = () => {
                         />
                         {/* <Text>{isChecked ? 'Checked' : 'Unchecked'}</Text> */}
                     </View>
-                    <Text style={styles.moreButton}>more</Text>
+                    <View style={styles.container4}>
+                        <TouchableOpacity style={styles.targetButton5}
+                            onPress={() => { }}>
+                            <Text style={styles.targetButtonText}>more</Text>
+                            <Image source={require("../assests/arrow_outward.png")} style={styles.image} />
+                        </TouchableOpacity>
+                    </View>
                 </View>
                 {/* Repeat for other courses */}
             </View>
@@ -84,6 +125,12 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 8,
     },
+    courseInfoall:{
+        // flexDirection: 'row',
+        // justifyContent: 'space-evenly',
+        alignItems:'flex-start'
+        // marginBottom: 4,
+    },
     courseInfoContainer: {
         flexDirection: 'row',
         justifyContent: 'space-evenly',
@@ -100,6 +147,7 @@ const styles = StyleSheet.create({
         borderRadius: 28,
         padding: 8,
         // marginLeft:12,
+        marginRight:8,
 
     },
     courseInfo2: {
@@ -126,17 +174,6 @@ const styles = StyleSheet.create({
         padding: 8,
 
     },
-    moreButton: {
-        textAlign: 'center',
-        color: '#FFFFFF',
-        backgroundColor: "#03346E",
-        width: 100,
-        borderRadius: 28,
-        position: 'absolute',
-        bottom: 16,
-        right: 16,
-        padding: 8,
-    },
     footer: {
         padding: 12,
         borderRadius: 28,
@@ -151,9 +188,76 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         position: 'absolute',
-        top: 6,
+        top: 5,
         right: 8,
 
+    },
+
+    container3: {
+        // flex: 1,
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        backgroundColor: '#F5FCFF',
+    },
+    button: {
+        paddingVertical: 6,
+        paddingHorizontal: 20,
+        borderRadius: 28,
+        borderWidth: 2,
+    },
+    buttonNotPressed: {
+        backgroundColor: '#E3F2FD', // Light blue background when not pressed
+        borderColor: '#90CAF9', // Border color
+    },
+    buttonPressed: {
+        backgroundColor: '#0D47A1', // Dark blue background when pressed
+        borderColor: '#90CAF9', // Border color same as background
+    },
+    buttonText: {
+        color: '#0D47A1', // Dark blue text color
+        fontSize: 12,
+        fontWeight: 'bold',
+    },
+    buttonTextPressed: {
+        color: '#FFFFFF', // White text color when pressed
+    },
+
+    container4: {
+        // flex: 1,
+        justifyContent: 'center',
+        alignItems: 'flex-end',
+        // backgroundColor: '#F5FCFF',
+        paddingTop: 16,
+    },
+    targetButton5: {
+        borderColor: '#90CAF9',
+        borderRadius: 28,
+        padding: 15,
+        paddingVertical: 6,
+        // margin: 5,
+        borderWidth: 2,
+        // width: 200,
+        // marginRight: 8,
+        flexDirection: 'row',
+        justifyContent: "flex-end",
+        alignItems: 'center',
+        backgroundColor: '#0D47A1',
+        paddingVertical: 6,
+        paddingHorizontal: 20,
+        borderRadius: 28,
+        borderWidth: 2,
+    },
+    image: {
+        width: 18,
+        height: 18,
+        marginLeft: 4,
+        // marginRight: 8,
+
+    },
+    targetButtonText: {
+        color: '#FFFFFF', // Dark blue text color
+        fontSize: 12,
+        fontWeight: 'bold',
     },
 
 });

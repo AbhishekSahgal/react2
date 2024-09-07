@@ -7,6 +7,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import HomeScreen from './src/screen/HomeScreen';
 import targetscreen from './src/screens/targetscreen';
 import SubjectScreen from './src/screens/SubjectScreen';
+import SyllabusScreen from './src/screens/SyllabusScreen';
+import Experiment from './src/screens/Experiment';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -14,8 +17,8 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown:false,}}>
-        <Stack.Screen name="SubjectScreen" component={SubjectScreen} />
+      <Stack.Navigator screenOptions={{ headerShown: false, }}>
+        <Stack.Screen name="Experiment" component={Experiment} />
       </Stack.Navigator>
     </NavigationContainer>
   );
