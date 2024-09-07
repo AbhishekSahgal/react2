@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
-const TARGET = () => {
+const TARGET = ({navigation}) => {
   const [selectedTarget, setSelectedTarget] = useState(null);
 
   const handleTargetClick = (target) => {
@@ -50,7 +50,7 @@ const TARGET = () => {
       <Text style={styles.targetText}>Click on your target</Text>
       <TouchableOpacity style={styles.getStartedButton}>
         <Text style={styles.getStartedButtonText}
-        
+        onPress={() => navigation.navigate('ComputerScience')}
         >Get started</Text>
       </TouchableOpacity>
       <Text style={styles.loadingText}>loading everything you need...</Text>
