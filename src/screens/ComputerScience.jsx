@@ -214,6 +214,7 @@ const SyllabusTracker = () => {
   };
 
   return (
+    
     <ScrollView style={styles.container}>
       {subjects.map((subject, index) => (
         <View key={index} style={styles.card}>
