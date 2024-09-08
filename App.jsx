@@ -16,6 +16,7 @@ import Experiment from './src/screens/Experiment';
 
 
 
+
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Stack.Screen name="Experiment" component={Experiment} />
         <Stack.Screen name="ComputerScience" component={ComputerScience} />
         <Stack.Screen name="targetscreen" component={targetscreen} />
+
       </Stack.Navigator>
         
     </NavigationContainer>
