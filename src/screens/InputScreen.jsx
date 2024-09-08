@@ -2,7 +2,7 @@ import React, { useState, } from 'react';
 import { View, TextInput, Button, Image, StyleSheet, Text, SafeAreaView } from 'react-native';
 
 
-const InputScreen = () => {
+const InputScreen = ({navigation}) => {
 
     // const images = [
     //     require('../assests/man.png'),
@@ -57,7 +57,7 @@ const InputScreen = () => {
                 keyboardType="email-address"
             />
 
-            <Button title="Submit" onPress={handleSubmit} />
+            <Button title="Submit" onPress={() => navigation.navigate('targetscreen')} />
 
             
         </View>

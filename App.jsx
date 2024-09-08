@@ -8,11 +8,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import targetscreen from './src/screens/targetscreen';
 import SignupScreen from './src/screens/SignupScreen';
 import InputScreen from './src/screens/InputScreen';
-
+import ComputerScience from './src/screens/ComputerScience';
 import SubjectScreen from './src/screens/SubjectScreen';
 import SyllabusScreen from './src/screens/SyllabusScreen';
 import Experiment from './src/screens/Experiment';
-import BottomTabNavigator from './src/screens/BottomTabNavigator';
+
+
 
 
 const Stack = createNativeStackNavigator();
@@ -20,13 +21,14 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      {/* <Stack.Navigator initialRouteName='SignupScreen' screenOptions={{ headerShown: false, }}>
+      <Stack.Navigator initialRouteName='SignupScreen' screenOptions={{ headerShown: false, }}>
       <Stack.Screen name="SignupScreen" component={SignupScreen} />
         <Stack.Screen name="InputScreen" component={InputScreen} />
         <Stack.Screen name="Experiment" component={Experiment} />
+        <Stack.Screen name="ComputerScience" component={ComputerScience} />
+        <Stack.Screen name="targetscreen" component={targetscreen} />
+      </Stack.Navigator>
         
-      </Stack.Navigator> */}
-      <BottomTabNavigator />
     </NavigationContainer>
   );
 }
