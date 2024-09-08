@@ -214,7 +214,7 @@ const SyllabusTracker = () => {
   };
 
   return (
-    
+
     <ScrollView style={styles.container}>
       {subjects.map((subject, index) => (
         <View key={index} style={styles.card}>
@@ -223,11 +223,23 @@ const SyllabusTracker = () => {
             <TouchableOpacity
               style={[
                 styles.ongoingButton,
-                { backgroundColor: isChecked[subject.name] ? '#0D6EFD' : '#6C757D' }
+                {
+                  backgroundColor: isChecked[subject.name] ? '#4CAF50' : '#F5F5F5',
+                  borderColor: isChecked[subject.name] ? '#66BB6A' : '#E0E0E0', // Lighter border color than the background
+                }
               ]}
               onPress={() => handleCheckboxToggle(subject.name)}
             >
-              <Text style={styles.ongoingButtonText}>{isChecked[subject.name] ? 'Ongoing' : 'Not Started'}</Text>
+              <Text
+                style={[
+                  styles.ongoingButtonText,
+                  {
+                    color: isChecked[subject.name] ? '#FFFFFF' : '#333333', // Text color changes based on state
+                  }
+                ]}
+              >
+                {isChecked[subject.name] ? 'Completed' : 'Not Started'}
+              </Text>
             </TouchableOpacity>
             <CheckBox
               checked={isChecked[subject.name]}
@@ -306,19 +318,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: 10,
+    // marginBottom: 5,
   },
   ongoingButton: {
-    paddingVertical: 6,
+    paddingVertical: 5,
     paddingHorizontal: 12,
     borderRadius: 20,
     borderWidth: 2,
     alignItems: 'center',
+    borderColor: '#B0BEC5'
   },
   ongoingButtonText: {
     fontSize: 12,
     fontWeight: 'bold',
-    color: '#FFFFFF',
+    color: '#ffffff',
   },
   checkboxContainer: {
     marginLeft: 10,
@@ -327,12 +340,14 @@ const styles = StyleSheet.create({
   subjectTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 5,
+    marginBottom: 12,
   },
   progressBar: {
     height: 10,
     borderRadius: 5,
-    marginVertical: 5,
+    // marginVertical: 5,
+    marginBottom: 16,
+
   },
   propertiesContainer: {
     marginBottom: 10,
