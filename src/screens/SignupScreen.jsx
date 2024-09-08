@@ -12,7 +12,7 @@ const SignupScreen = ({ navigation }) => {
             <Text style={styles.subheading}>Your path to success starts here!</Text>
 
             <TouchableOpacity style={styles.targetButton5}
-             onPress={() => navigation.navigate('InputScreen')}>
+             onPress={() => navigation.navigate('ClockScreen')}>
                 <Text style={styles.targetButtonText}>Sign Up</Text>
                 <Image source={require("../assests/arrow.png")} style={styles.image}/>
             </TouchableOpacity>
