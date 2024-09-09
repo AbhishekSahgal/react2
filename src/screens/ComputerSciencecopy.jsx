@@ -478,7 +478,7 @@ const styles = StyleSheet.create({
   },
   menu: {
     position: 'absolute',
-    top: -800, 
+    top: -800,
     left: 0,
     bottom: 0,
     width: '80%',

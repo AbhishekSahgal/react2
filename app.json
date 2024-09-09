@@ -2,12 +2,12 @@
   "expo": {
     "name": "target",
     "slug": "target",
-    "version": "1.0.0"
-  },
-
-//   "splash": {
-//   "image": "src/assests/splash.png",
-//   "resizeMode": "cover",
-//   "backgroundColor": "white"
-// }
+    "version": "1.0.0",
+    "assets": [
+      "./assets/fonts/digital.TTF"
+    ],
+    "android": {
+      "package": "com.Gate"
+    }
+  }
 }
