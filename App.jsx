@@ -8,7 +8,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import targetscreen from './src/screens/targetscreen';
 import SignupScreen from './src/screens/SignupScreen';
 import InputScreen from './src/screens/InputScreen';
-import clock from './src/screens/clock';
+// import clock from './src/screens/clock';
 import ComputerScience from './src/screens/ComputerScience';
 import ComputerSciencecopy from './src/screens/ComputerSciencecopy';
 
