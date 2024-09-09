@@ -1,13 +1,28 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, StatusBar, useWindowDimensions, TouchableOpacity, Platform } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, useWindowDimensions, TouchableOpacity, Platform } from 'react-native';
+import { StatusBar } from 'expo-status-bar'; // Import this
 import moment from 'moment';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import * as ScreenOrientation from 'expo-screen-orientation'; // Import ScreenOrientation
+import { useFocusEffect } from '@react-navigation/native'; // Import useFocusEffect
 
 const CountdownScreen = () => {
   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining('2025-02-01'));
   const [selectedDate, setSelectedDate] = useState(moment('2025-02-01'));
   const [showPicker, setShowPicker] = useState(false);
   const { width, height } = useWindowDimensions();
+
+  useFocusEffect(
+    useCallback(() => {
+      // Set orientation to landscape when the screen is focused
+      ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE);
+
+      return () => {
+        // Set orientation back to portrait when leaving the screen
+        ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+      };
+    }, [])
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -17,7 +32,6 @@ const CountdownScreen = () => {
     return () => clearInterval(interval);
   }, [selectedDate]);
 
-  // Use useCallback to avoid unnecessary re-renders
   const handleDateChange = useCallback((event, date) => {
     if (date && event.type === 'set') {
       setSelectedDate(moment(date));
@@ -42,7 +56,9 @@ const CountdownScreen = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" />
+      {/* Add this to hide the status bar */}
+      <StatusBar hidden />
+      
       <View style={[styles.timerContainer, isLandscape && styles.landscapeContainer]}>
         <TouchableOpacity onPress={() => setShowPicker(true)} style={styles.titleContainer}>
           <Text style={styles.title}>Countdown to {selectedDate.format('DD MMMM YYYY')}</Text>
@@ -61,7 +77,8 @@ const CountdownScreen = () => {
             <Text style={styles.label}>Minutes</Text>
           </View>
           <View style={styles.timeBlock}>
-            <Text style={styles.timeText}>{timeRemaining.seconds}</Text>
+            
+            <Text style={[styles.timeText, styles.redText]}>{timeRemaining.seconds}</Text>
             <Text style={styles.label}>Seconds</Text>
           </View>
         </View>
@@ -135,7 +152,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   timeText: {
-    fontSize: 85,
+    fontSize: 84,
     color: '#ffffff',
     fontWeight: 'bold',
   },
@@ -144,6 +161,9 @@ const styles = StyleSheet.create({
     color: '#b0b0b0',
     paddingBottom: 20,
   },
+  redText:{
+    color:'red'
+  }
 });
 
 export default CountdownScreen;

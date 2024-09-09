@@ -23,7 +23,7 @@ const Stack = createNativeStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='ClockScreen' screenOptions={{ headerShown: false, }}>
+      <Stack.Navigator initialRouteName='SignupScreen' screenOptions={{ headerShown: false, }}>
       <Stack.Screen name="SignupScreen" component={SignupScreen} />
         <Stack.Screen name="InputScreen" component={InputScreen} />
         <Stack.Screen name="Experiment" component={Experiment} />
