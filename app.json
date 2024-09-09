@@ -3,11 +3,13 @@
     "name": "target",
     "slug": "target",
     "version": "1.0.0",
-    "assets": [
-      "./assets/fonts/digital.TTF"
+    "plugins": [
+      "expo-font"
     ],
-    "android": {
-      "package": "com.Gate"
+    "extra": {
+      "eas": {
+        "projectId": "9e18ac30-6829-49cd-8953-5e2f0045375c"
+      }
     }
   }
 }

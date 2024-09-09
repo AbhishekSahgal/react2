@@ -1,9 +1,15 @@
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React, { useState } from 'react';
 import { View, Image, Text, StyleSheet, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
 import { CheckBox } from 'react-native-elements';
 import { ProgressBar as PaperProgressBar } from 'react-native-paper';
 
+
+
+
+
 const windowWidth = Dimensions.get('window').width;
+
 
 const subjects = [
   {

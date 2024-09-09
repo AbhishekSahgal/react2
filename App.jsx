@@ -16,6 +16,8 @@ import SubjectScreen from './src/screens/SubjectScreen';
 import SyllabusScreen from './src/screens/SyllabusScreen';
 import Experiment from './src/screens/Experiment';
 import Screenlayout from './src/screens/Screenlayout';
+import ClockScreen from './src/screens/ClockScreen';
+
 
 
 
@@ -28,10 +30,13 @@ function App() {
       <Stack.Navigator initialRouteName='SignupScreen' screenOptions={{ headerShown: false, }}>
       <Stack.Screen name="SignupScreen" component={SignupScreen} />
         <Stack.Screen name="InputScreen" component={InputScreen} />
+        <Stack.Screen name="Experiment" component={Experiment} />
         <Stack.Screen name="ComputerScience" component={ComputerScience} />
+        <Stack.Screen name="ClockScreen" component={ClockScreen} />
         <Stack.Screen name="targetscreen" component={targetscreen} />
 
       </Stack.Navigator>
+        
     </NavigationContainer>
   );
 }
